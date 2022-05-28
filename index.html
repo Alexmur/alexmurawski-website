@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head id="head">
         <meta charset="UTF-8">
         <meta name="author" content="Alex Murawski">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Alex Murawski</title>
     </head>
+
     <body>
-        <div class="content glow">
-            <div class="card">
-                <h1>Hello</h1>
-            </div>
-        </div>
+       <div id="circle">
+        <span class="title">Alex Murawski</span>
+        <span class="sub-title">Web Developer</span>
+       </div>
     </body>
+
+    <script>
+        const circle = document.getElementById("circle");
+        const body = document.querySelector("body");
+
+        function moveShadow(e) {
+            const {
+                x,
+                y
+            } = e;
+            const {
+                clientWidth,
+                clientHeight
+            } = document.body;
+
+            if (!x || !y || !clientWidth || !clientHeight) return;
+
+            const calculatedOffsetX = (x / clientWidth - 0.5) * 30;
+            const calculatedOffsetY = (y / clientHeight - 0.5) * 30;
+
+            circle.style.boxShadow = `${calculatedOffsetX}px ${calculatedOffsetY}px 45px 12px #000`;
+        }
+
+        body.addEventListener('mousemove', moveShadow);
+    </script>
 </html>
