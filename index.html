@@ -9,34 +9,36 @@
     </head>
 
     <body>
-       <div id="circle">
-        <span class="title">Alex Murawski</span>
-        <span class="sub-title">Web Developer</span>
-       </div>
+      <div id="welcome-pane">
+        <span id="welcome-pane-text">
+            Welcome
+        </span>
+      </div>
+      <div id="main-content">
+        <div class="content-pane">
+            <span class="cp-title">Alex Murawski</span>
+            <span class="cp-subtitle">Web Developer at <a href="https://www.apple.com" target="_blank">Apple</a></span>
+            <div class="cp-links">
+                <a href="https://www.linkedin.com/in/alexander-murawski" target="_blank"><img src="./icon_linkedin.svg" width="26" height="26" class="link-color"></a>
+                <a href="https://www.instagram.com/alexmurawski" target="_blank"><img src="./icon_instagram.svg" width="26" height="26" class="link-color"></a>
+                <a href="https://twitter.com/AlexMurawski" target="_blank"><img src="./icon_twitter.svg" width="26" height="26" class="link-color"></a>
+                <a href="https://github.com/Alexmur" target="_blank"><img src="./icon_github.svg" width="26" height="26" class="link-color"></a>
+                <a href="mailto:alex1murawski@gmail.com"><img src="./icon_email.svg" width="26" height="26" class="link-color"></a>
+            </div>
+        </div>
+      </div>
     </body>
 
     <script>
-        const circle = document.getElementById("circle");
-        const body = document.querySelector("body");
+        window.onload = function() {
+            // welcome-pane
+            setTimeout(() => document.querySelector('#welcome-pane').classList.add('no-background'), 3500);
+            setTimeout(() => document.querySelector('#welcome-pane').classList.add('hide'), 5000);
 
-        function moveShadow(e) {
-            const {
-                x,
-                y
-            } = e;
-            const {
-                clientWidth,
-                clientHeight
-            } = document.body;
-
-            if (!x || !y || !clientWidth || !clientHeight) return;
-
-            const calculatedOffsetX = (x / clientWidth - 0.5) * 30;
-            const calculatedOffsetY = (y / clientHeight - 0.5) * 30;
-
-            circle.style.boxShadow = `${calculatedOffsetX}px ${calculatedOffsetY}px 45px 12px #000`;
-        }
-
-        body.addEventListener('mousemove', moveShadow);
+            // welcome-pane-text
+            setTimeout(() => document.querySelector('#welcome-pane-text').classList.add('show'), 0);
+            setTimeout(() => document.querySelector('#welcome-pane-text').classList.remove('show'), 3000);
+            setTimeout(() => document.querySelector('#welcome-pane-text').classList.add('hide'), 3000);
+        };
     </script>
 </html>
