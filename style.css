@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
     letter-spacing: 1px;
     background-color: #000;
     margin: 0;
@@ -32,9 +33,9 @@ body {
 }
 
 #welcome-pane-text {
-    font-size: 48px;
-    width: 500px;
-    padding-left: 300px;
+    font-size: 4em;
+    width: 40%;
+    padding-left: 25%;
     text-align: center;
     letter-spacing: 5px;
     color: transparent;
@@ -50,7 +51,7 @@ body {
 #welcome-pane-text.hide {
     color: transparent;
     padding-left: 0;
-    padding-right: 300px;
+    padding-right: 25%;
     letter-spacing: 5px;
 }
 
@@ -71,15 +72,15 @@ body {
 }
 
 .cp-title {
-    font-size: 42px;
+    font-size: 4em;
 }
 
 .cp-subtitle {
-    font-size: 18px;
+    font-size: 1.5em;
     color: #ddd;
-    margin-top: 8px;
-    margin-bottom: 16px;
-    padding: 8px;
+    margin-top: 0.6em;
+    margin-bottom: 1.2em;
+    padding: 0.6em 1.8em;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
@@ -93,6 +94,11 @@ body {
 .cp-subtitle a:hover {
     text-decoration: none;
     color: #888;
+}
+
+img.link-color {
+    width: 2em;
+    height: 2em;
 }
 
 .link-color {
